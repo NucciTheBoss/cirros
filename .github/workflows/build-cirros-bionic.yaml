@@ -1,4 +1,4 @@
-name: CirrOS Builder
+name: CirrOS builder
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-cirros-aarch64:
-    name: CirrOS aarch64 Builder
+    name: aarch64
     runs-on: ubuntu-18.04
     env:
       ARCHES: aarch64
@@ -20,12 +20,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
   
   build-cirros-arm:
-    name: CirrOS arm Builder
+    name: arm
     runs-on: ubuntu-18.04
     env:
       ARCHES: arm
@@ -38,12 +38,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
 
   build-cirros-i386:
-    name: CirrOS i386 Builder
+    name: i386
     runs-on: ubuntu-18.04
     env:
       ARCHES: i386
@@ -56,12 +56,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
 
   build-cirros-x64_64:
-    name: CirrOS x86_64 Builder
+    name: x86_64
     runs-on: ubuntu-18.04
     env:
       ARCHES: x86_64
@@ -74,12 +74,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
 
   build-cirros-powerpc:
-    name: CirrOS PowerPC Builder
+    name: powerpc
     runs-on: ubuntu-18.04
     env:
       ARCHES: powerpc
@@ -92,12 +92,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
 
   build-cirros-ppc64:
-    name: CirrOS ppc64 Builder
+    name: ppc64
     runs-on: ubuntu-18.04
     env:
       ARCHES: ppc64
@@ -110,12 +110,12 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
 
   build-cirros-ppc64le:
-    name: CirrOS ppc64le Builder
+    name: ppc64le
     runs-on: ubuntu-18.04
     env:
       ARCHES: ppc64le
@@ -128,6 +128,6 @@ jobs:
       - name: Build CirrOS
         shell: bash
         run: |
-          apt-get install -y cloud-utils qemu-system openbios-ppc
+          sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
           ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
