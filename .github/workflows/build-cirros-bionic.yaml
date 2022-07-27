@@ -22,7 +22,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
   
   build-cirros-arm:
     name: arm
@@ -40,7 +40,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
 
   build-cirros-i386:
     name: i386
@@ -58,7 +58,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
 
   build-cirros-x64_64:
     name: x86_64
@@ -76,7 +76,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
 
   build-cirros-powerpc:
     name: powerpc
@@ -94,7 +94,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
 
   build-cirros-ppc64:
     name: ppc64
@@ -112,7 +112,7 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
 
   build-cirros-ppc64le:
     name: ppc64le
@@ -130,4 +130,4 @@ jobs:
         run: |
           sudo apt-get install -y cloud-utils qemu-system openbios-ppc
           ./bin/system-setup
-          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+          ./bin/build-release daily
