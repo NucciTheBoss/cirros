@@ -1,0 +1,133 @@
+name: CirrOS Builder
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-cirros-aarch64:
+    name: CirrOS aarch64 Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: aarch64
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+  
+  build-cirros-arm:
+    name: CirrOS arm Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: arm
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+
+  build-cirros-i386:
+    name: CirrOS i386 Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: i386
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+
+  build-cirros-x64_64:
+    name: CirrOS x86_64 Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: x86_64
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+
+  build-cirros-powerpc:
+    name: CirrOS PowerPC Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: powerpc
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+
+  build-cirros-ppc64:
+    name: CirrOS ppc64 Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: ppc64
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
+
+  build-cirros-ppc64le:
+    name: CirrOS ppc64le Builder
+    runs-on: ubuntu-18.04
+    env:
+      ARCHES: ppc64le
+      BOOTTEST: "true"
+      QUIET: 1
+    steps:
+      - name: Pull CirrOS artifacts
+        uses: actions/checkout@v3
+
+      - name: Build CirrOS
+        shell: bash
+        run: |
+          apt-get install -y cloud-utils qemu-system openbios-ppc
+          ./bin/system-setup
+          ./bin/build-release daily-$(git rev-parse --short "$GITHUB_SHA")
